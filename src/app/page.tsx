@@ -18,28 +18,36 @@ const SKILLS = [
 
 const PROJECTS = [
   {
-    title: "E-Commerce Platform",
-    desc: "Full-stack shopping app with cart, auth, payment integration and admin dashboard.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    color: "#00d4ff", icon: "🛒", link: "#",
+    title: "Crown Hotel – Luxury Hotel Website",
+    desc: "A modern, fully responsive luxury hotel website built with Next.js and Tailwind CSS. Designed with premium UI, smooth animations, SEO optimization, and deployed on Vercel for high performance.",
+    tech: ["Next.js", "Tailwind CSS", "React", "Vercel","GSAP"],
+    color: "#00d4ff",
+    icon: "🏨",
+    link: "https://crown-hotel-13zwn7dy1-ajeety4969-gmailcoms-projects.vercel.app",
   },
   {
     title: "Task Management App",
     desc: "Real-time collaborative task board with drag-and-drop, notifications and team features.",
     tech: ["Next.js", "Express.js", "MySQL", "Socket.io"],
-    color: "#7c3aed", icon: "📋", link: "#",
+    color: "#7c3aed",
+    icon: "📋",
+    link: "#",
   },
   {
     title: "Blog CMS",
     desc: "Content management system with rich text editor, SEO optimization and analytics.",
     tech: ["Next.js", "MongoDB", "Node.js", "CSS3"],
-    color: "#f59e0b", icon: "✍️", link: "#",
+    color: "#f59e0b",
+    icon: "✍️",
+    link: "#",
   },
   {
     title: "REST API Service",
     desc: "Scalable RESTful API with JWT auth, rate limiting, caching and comprehensive docs.",
     tech: ["Express.js", "MySQL", "JWT", "Node.js"],
-    color: "#10b981", icon: "⚙️", link: "#",
+    color: "#10b981",
+    icon: "⚙️",
+    link: "#",
   },
 ];
 
@@ -423,61 +431,97 @@ function Skills({ isDark }: { isDark: boolean }) {
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
 function Projects({ isDark }: { isDark: boolean }) {
-  const cardBase = isDark ? "bg-[#0d1117] border-[#1e2433]" : "bg-white border-gray-200";
+  const cardBase = isDark
+    ? "bg-[#0d1117] border-[#1e2433]"
+    : "bg-white border-gray-200";
 
   return (
     <section id="projects" className="py-24 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/20 to-transparent" />
+
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="font-mono text-xs text-[#00d4ff]/60 tracking-widest mb-3">03. PROJECTS</div>
-          <h2 className={`font-display font-extrabold text-4xl md:text-5xl mb-4 ${isDark ? "text-white" : "text-gray-900"}`}>
+          <div className="font-mono text-xs text-[#00d4ff]/60 tracking-widest mb-3">
+            03. PROJECTS
+          </div>
+
+          <h2
+            className={`font-display font-extrabold text-4xl md:text-5xl mb-4 ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
             Featured <span className="gradient-text">Work</span>
           </h2>
+
           <p className={isDark ? "text-gray-500" : "text-gray-400"}>
-            A selection of projects that showcase my skills and problem-solving approach.
+            A selection of projects that showcase my skills.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {PROJECTS.map((project, i) => (
-            <div key={i} className={`project-card border rounded-2xl p-6 group relative ${cardBase}`}>
+            <div
+              key={i}
+              className={`border rounded-2xl p-6 group relative transition-all duration-300 ${cardBase}`}
+            >
               <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
-                    style={{ background: `${project.color}15`, border: `1px solid ${project.color}30` }}>
-                    {project.icon}
-                  </div>
-                  <h3 className={`font-display font-bold text-lg group-hover:text-[#00d4ff] transition-colors ${isDark ? "text-white" : "text-gray-800"}`}>
-                    {project.title}
-                  </h3>
-                </div>
+                <h3
+                  className={`font-display font-bold text-lg group-hover:text-[#00d4ff] transition-colors ${
+                    isDark ? "text-white" : "text-gray-800"
+                  }`}
+                >
+                  {project.title}
+                </h3>
+
+                {/* 🔥 FIXED LINK HERE */}
                 <Link
                   href={project.link}
-                  className={`w-8 h-8 rounded-lg border flex items-center justify-center hover:text-[#00d4ff] hover:border-[#00d4ff]/30 transition-all duration-300 opacity-0 group-hover:opacity-100 ${isDark ? "border-white/10 text-gray-600" : "border-gray-200 text-gray-400"}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-8 h-8 rounded-lg border flex items-center justify-center hover:text-[#00d4ff] hover:border-[#00d4ff]/30 transition-all duration-300 ${
+                    isDark
+                      ? "border-white/10 text-gray-600"
+                      : "border-gray-200 text-gray-400"
+                  }`}
                 >
-                  <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                    <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
                 </Link>
               </div>
 
-              <p className={`text-sm leading-relaxed mb-5 ${isDark ? "text-gray-400" : "text-gray-500"}`}>{project.desc}</p>
-
-              <div className={`h-px mb-4 group-hover:bg-[#00d4ff]/10 transition-colors ${isDark ? "bg-white/5" : "bg-gray-100"}`} />
+              <p
+                className={`text-sm leading-relaxed mb-5 ${
+                  isDark ? "text-gray-400" : "text-gray-500"
+                }`}
+              >
+                {project.desc}
+              </p>
 
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
-                  <span key={t} className="font-mono text-[11px] px-2.5 py-1 rounded-lg border transition-all duration-300"
-                    style={{ background: `${project.color}08`, borderColor: `${project.color}20`, color: project.color }}>
+                  <span
+                    key={t}
+                    className="font-mono text-[11px] px-2.5 py-1 rounded-lg border"
+                    style={{
+                      background: `${project.color}10`,
+                      borderColor: `${project.color}40`,
+                      color: project.color,
+                    }}
+                  >
                     {t}
                   </span>
                 ))}
               </div>
-
-              <div className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl"
-                style={{ background: `linear-gradient(90deg, transparent, ${project.color}60, transparent)` }} />
             </div>
           ))}
         </div>
